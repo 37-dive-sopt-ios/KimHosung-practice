@@ -64,7 +64,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     private func bindID() {
-        if let id, id != "" {
+        if let id, !id.isEmpty {
             welcomeLabel.text = "\(id)님 \n반가워요!"
         } else {
             welcomeLabel.text = "???님 \n반가워요!"
