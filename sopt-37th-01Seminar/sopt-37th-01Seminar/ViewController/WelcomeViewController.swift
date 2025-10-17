@@ -29,7 +29,7 @@ final class WelcomeViewController: UIViewController {
     
     private var goHomeButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 426, width: 335, height: 58))
-        button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
+        button.backgroundColor = UIColor(rgb: 0xFF6F0F)
         button.setTitle("메인으로", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
@@ -38,9 +38,9 @@ final class WelcomeViewController: UIViewController {
     
     lazy var backToLoginButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 498, width: 335, height: 58))
-        button.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
+        button.backgroundColor = UIColor(rgb: 0xDDDEE3)
         button.setTitle("로그인하기", for: .normal)
-        button.setTitleColor(UIColor(red: 172/255, green: 176/255, blue: 185/255, alpha: 1), for: .normal)
+        button.setTitleColor(UIColor(rgb: 0xACB0B9), for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
         button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
         return button
@@ -69,7 +69,6 @@ final class WelcomeViewController: UIViewController {
         } else {
             welcomeLabel.text = "???님 \n반가워요!"
         }
-//        welcomeLabel.text = "\(id ?? "???")님 \n반가워요!"
     }
     
     func setLabelText(id: String?) {
