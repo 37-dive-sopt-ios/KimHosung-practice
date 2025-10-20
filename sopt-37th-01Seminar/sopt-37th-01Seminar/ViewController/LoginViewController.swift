@@ -54,7 +54,7 @@ final class LoginViewController: UIViewController {
         return button
     }()
     
-    lazy var testPickerView: UISlider = {
+    lazy var testSliderView: UISlider = {
         let slider = UISlider(frame: CGRect(x: 20, y: 500, width: self.view.bounds.width - 40, height: 64))
         slider.thumbTintColor = UIColor(rgb: 0xFF0000)
         slider.tintColor = UIColor(rgb: 0x00FF00)
@@ -74,7 +74,7 @@ final class LoginViewController: UIViewController {
         view.addSubview(idTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
-        view.addSubview(testPickerView)
+        view.addSubview(testSliderView)
     }
     
     @objc
