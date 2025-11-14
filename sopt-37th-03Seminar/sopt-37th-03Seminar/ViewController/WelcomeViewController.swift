@@ -1,0 +1,99 @@
+//
+//  WelcomeViewController.swift
+//  sopt-37th-01Seminar
+//
+//  Created by 김호성 on 2025.10.11.
+//
+
+import Foundation
+import UIKit
+
+final class WelcomeViewController: UIViewController {
+    
+    var id: String?
+    
+    private let logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(resource: .welcome)
+        return imageView
+    }()
+    
+    private let welcomeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "???님 \n반가워요!"
+        label.font = UIFont(name: "Pretendard-ExtraBold", size: 25)
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    private var goHomeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(rgb: 0xFF6F0F)
+        button.setTitle("메인으로", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
+        return button
+    }()
+    
+    lazy var backToLoginButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(rgb: 0xDDDEE3)
+        button.setTitle("로그인하기", for: .normal)
+        button.setTitleColor(UIColor(rgb: 0xACB0B9), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
+        button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = .white
+        configureView()
+        
+        bindID()
+    }
+    
+    private func configureView() {
+        view.backgroundColor = .white
+        
+        [
+            logoImageView,
+            welcomeLabel,
+            goHomeButton,
+            backToLoginButton
+        ].forEach({ [weak self] in
+            guard let self else { return }
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        })
+        
+        NSLayoutConstraint.activate([
+//            logoImageView
+        ])
+    }
+    
+    private func bindID() {
+        if let id, !id.isEmpty {
+            welcomeLabel.text = "\(id)님 \n반가워요!"
+        } else {
+            welcomeLabel.text = "???님 \n반가워요!"
+        }
+    }
+    
+    func setLabelText(id: String?) {
+        self.id = id
+    }
+    
+    @objc
+    private func backToLoginButtonDidTap() {
+        guard let navigationController else {
+            dismiss(animated: true)
+            return
+        }
+        navigationController.popViewController(animated: true)
+    }
+}
