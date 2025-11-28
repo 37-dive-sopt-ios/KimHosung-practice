@@ -10,4 +10,7 @@
    <FileRef
       location = "group:sopt-37th-03Seminar/sopt-37th-03Seminar.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:sopt-37th-04Seminar/sopt-37th-04Seminar.xcodeproj">
+   </FileRef>
 </Workspace>
