@@ -16,4 +16,7 @@
    <FileRef
       location = "group:SwiftUI_Tutorial_a/SwiftUI_Tutorial_a.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SwiftUI_Practice/SwiftUI_Practice.xcodeproj">
+   </FileRef>
 </Workspace>
