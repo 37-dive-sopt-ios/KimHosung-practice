@@ -13,4 +13,7 @@
    <FileRef
       location = "group:sopt-37th-04Seminar/sopt-37th-04Seminar.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SwiftUI_Tutorial_a/SwiftUI_Tutorial_a.xcodeproj">
+   </FileRef>
 </Workspace>
